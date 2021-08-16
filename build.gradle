@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.andreysosnovyy'
+version ''
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.andreysosnovyy.Main'
+        )
+    }
+}
+
+dependencies {
+
+}
